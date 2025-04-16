@@ -243,6 +243,7 @@ h3 {
     flex-direction: row;
     align-items: stretch;
     gap: 0rem;
+    font-family: 'Poppins', sans-serif;
   }
 
   header {
@@ -254,9 +255,42 @@ h3 {
     position: sticky;
     width: fit-content;
     min-width: 200px;
-
+    overflow-y: auto; /* Cho phép thanh cuộn xuất hiện khi cần */
   }
-
+  
+  /* Thanh cuộn ngang */
+  nav::-webkit-scrollbar {
+    width: 8px; /* Đặt chiều rộng cho thanh cuộn */
+  }
+  
+  /* Thanh cuộn ngang khi hover */
+  nav::-webkit-scrollbar:hover {
+    width: 12px; /* Đặt chiều rộng cho thanh cuộn khi hover */
+  }
+  
+  /* Màu nền của thanh cuộn */
+  nav::-webkit-scrollbar-track {
+    background-color: #f0f0f0; /* Màu nền của đường dẫn thanh cuộn */
+    border-radius: 10px;
+  }
+  
+  /* Màu của thanh cuộn */
+  nav::-webkit-scrollbar-thumb {
+    background-color: #ebe2e2; /* Màu của thanh cuộn */
+    border-radius: 10px;
+    border: 2px solid #f0f0f0; /* Viền cho thanh cuộn */
+  }
+  
+  /* Màu của thanh cuộn khi hover */
+  nav::-webkit-scrollbar-thumb:hover {
+    background-color: #555; /* Màu thanh cuộn khi hover */
+  }
+  
+  /* Tùy chỉnh thanh cuộn cho Firefox */
+  nav {
+    scrollbar-width: thin; /* Đặt chiều rộng thanh cuộn */
+    scrollbar-color: #000202 #ffffff; /* Màu thanh cuộn và nền */
+  }
   nav:not(.open) {
     display: flex;
   }
@@ -272,4 +306,5 @@ h3 {
   .header button {
     display: none;
   }
+  
 }
